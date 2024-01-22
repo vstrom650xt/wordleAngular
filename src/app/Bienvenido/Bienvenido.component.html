@@ -1,0 +1,14 @@
+<!-- Bienvenido.component.html -->
+<div>
+  <p>Bienvenido a Wordle</p>
+  <button (click)="irAjuego()">Ir al juego</button>
+  <button (click)="irApalabra()">Cambiar palabra</button>
+
+  <div *ngIf="mostrarPalabra">
+    <app-CambiarPalabra></app-CambiarPalabra>
+  </div>
+
+  <div *ngIf="mostrarJuego">
+    <app-juego></app-juego>
+  </div>
+</div>
