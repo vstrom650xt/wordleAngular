@@ -8,33 +8,22 @@ import { Component, OnInit } from '@angular/core';
 export class BienvenidoComponent implements OnInit {
   mostrarPalabra = false;
   mostrarJuego = false;
+  palabraAEliminar: string = '';
+
   constructor() { }
+
   ngOnInit() {}
 
-  irApalabra(){
-    if(this.mostrarPalabra == false){
-      this.mostrarPalabra = true;
-      console.log("palabra")
-    }else{
-      this.mostrarPalabra = false;
-
-    }
-
-
+  irApalabra() {
+    this.mostrarPalabra = !this.mostrarPalabra;
   }
 
-  irAjuego(){
-    if(this.mostrarJuego == false){
-      this.mostrarJuego = true;
-      console.log("juego")
-    }else{
-      this.mostrarJuego = false;
-
-    }
-
-
+  irAjuego() {
+    this.mostrarJuego = !this.mostrarJuego;
   }
 
-
-
+  cambiarPalabra(nuevaPalabra: string) {
+    this.palabraAEliminar = nuevaPalabra;
+    console.log(`Palabra cambiada a: ${nuevaPalabra}`);
+  }
 }

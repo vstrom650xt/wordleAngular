@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+// CambiarPalabra.component.ts
+
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-CambiarPalabra',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./CambiarPalabra.component.css']
 })
 export class CambiarPalabraComponent implements OnInit {
+  @Input() mostrar: boolean = false;
+  @Output() cambiarPalabraEvent = new EventEmitter<string>();
+  nuevaPalabra: string = '';
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  cambiarPalabra() {
+    if (this.nuevaPalabra.trim() !== '') {
+      this.cambiarPalabraEvent.emit(this.nuevaPalabra);
+      this.nuevaPalabra = '';
+    }
+  }
 }

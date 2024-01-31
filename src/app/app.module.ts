@@ -8,19 +8,21 @@ import { CambiarPalabraComponent } from './CambiarPalabra/CambiarPalabra.compone
 import { JuegoComponent } from './juego/juego.component';
 import { GanadoComponent } from './ganado/ganado.component';
 import { PerdidoComponent } from './perdido/perdido.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [					
+  declarations: [
     AppComponent,
-      BienvenidoComponent,
-      CambiarPalabraComponent,
-      JuegoComponent,
-      GanadoComponent,
-      PerdidoComponent
-   ],
+    BienvenidoComponent,
+    CambiarPalabraComponent,
+    JuegoComponent,
+    GanadoComponent,
+    PerdidoComponent
+  ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule, 
   ],
   providers: [],
   bootstrap: [AppComponent]

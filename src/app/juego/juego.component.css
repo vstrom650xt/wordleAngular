@@ -1,0 +1,60 @@
+/* juego.component.css */
+
+/* Add styles for correct and incorrect positions */
+.correct {
+  background-color: green;
+  color: white;
+}
+
+.incorrect {
+  background-color: yellow;
+  color: black;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  width: 400px;
+  height: 400px;
+  display: grid;
+  grid-gap: 20px 5px;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20% 20% 20% 20% 20% 20%;
+  grid-template-areas:
+    "cua1 cua2 cua3 cua4 cua5"
+    "cua6 cua7 cua8 cua9 cua10"
+    "cua11 cua12 cua13 cua14 cua15"
+    "cua16 cua17 cua18 cua19 cua20"
+    "cua21 cua22 cua23 cua24 cua25"
+    ".      .     btn   .      .  "
+    "letras      letras     letras   letras      letras  "
+    ".      .     noestan   .      .  "
+    "                       . . . . .                 "
+    "pista      pista     pista   pista      pista  ";
+}
+
+.correct, .incorrect {
+  text-align: center;
+  border: 1px solid black;
+}
+
+.btn {
+  grid-area: btn;
+}
+
+.letras {
+  grid-area: letras;
+}
+
+#noestan {
+  grid-area: noestan;
+}
+
+.pista {
+  grid-area: pista;
+}

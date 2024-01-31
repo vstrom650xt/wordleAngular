@@ -1,1 +1,28 @@
-<p>el juego</p>
+<!-- juego.component.html -->
+
+<div class="container">
+  <h1>WORDLE</h1>
+  <p>La palabra del día: {{ palabraAAdivinar }}</p>
+  <p>Te quedan <span id="intentos">{{ intentosRestantes }}</span> intentos</p>
+  <div class="wrapper">
+    <input *ngFor="let char of userInput; let i = index"
+           class="cua{{ i + 1 }}"
+           maxlength="1"
+           [(ngModel)]="userInput[i]"
+           [ngClass]="getCellStyle(i)">
+    
+    <button class="btn" (click)="realizarIntento()">Comprobar</button>
+    
+    <p class="letras">letras que no se encuentran en la palabra</p>
+    <p id="noestan"></p>
+    <p id="pista">MOSTRAR PISTA</p>
+    <p id="pista2"></p>
+  </div>
+
+  <!-- Use template reference variable (#cambiarPalabraRef) to get a reference to CambiarPalabraComponent -->
+  <app-CambiarPalabra
+    #cambiarPalabraRef
+    [mostrar]="true"
+    (cambiarPalabraEvent)="cambiarPalabra($event)"
+  ></app-CambiarPalabra>
+</div>
